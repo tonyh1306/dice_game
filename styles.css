@@ -7,7 +7,7 @@
 .dice {
   text-align: center;
   display: inline-block;
-
+  perspective: 1000px;
 }
 
 body {
@@ -30,6 +30,26 @@ p {
 
 img {
   width: 80%;
+  transition: all 0.5s ease;
+}
+
+.dice img {
+  animation: roll 0.5s ease-out;
+}
+
+@keyframes roll {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: rotateX(360deg) rotateY(360deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotateX(720deg) rotateY(720deg);
+    opacity: 1;
+  }
 }
 
 footer {
@@ -37,7 +57,6 @@ footer {
   color: #EEEEEE;
   text-align: center;
   font-family: 'Indie Flower', cursive;
-
 }
 
 button {
